@@ -11,3 +11,7 @@ HashSet<Integer> set = new HashSet<Integer>();
 - TODO
   - [x] Task1
   - [] Tasl2
+
+<details>
+Testing out collapse feature.
+</details>
