@@ -18,11 +18,10 @@
 
 
 class Solution {
-    public int solutionMethodIntFromIntArray(int[] nums){
-        int result = 0;
+    public int removeDuplicates(int[] nums) {
 
-        return result; 
     }
+
 
 }
 
