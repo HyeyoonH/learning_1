@@ -1,8 +1,10 @@
 import java.util.*;
 import java.io.*; 
 
-class SolutionMethod{
+class SolutionMethod {
     public int[] twoSum(int[] nums, int target) {
+        // System.out.println(this.getClass().getPackage());
+
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         
         for(int i=0; i < nums.length; i++){
@@ -23,16 +25,17 @@ class SolutionMethod{
         }
         return new int[]{-1,-1};
     }
+    
 }
 
-class Solution {
+public class Solution {
     public static void main(String[] args){
         SolutionMethod solution = new SolutionMethod();
         int[] input = {2,7,11,15};
         int[] restuls = solution.twoSum(input, 9);
         for(int index: restuls){
             System.out.println(index);
-        }
+        }        
     }
 }
 
