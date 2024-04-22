@@ -1,5 +1,26 @@
 class Solution{
-    public boolean isPalindrome(String s) {
+
+    public boolean isPalindromeCharAt(String s) {
+        s = s.toLowerCase();
+        StringBuffer sb = new StringBuffer();
+        char[] charArray = s.toCharArray();
+        for(char c: charArray){
+            if(Character.isLetterOrDigit(c)){
+                sb.append(c);
+            }
+        }
+
+        int forwardPointer = 0;
+        int backwardPointer = sb.length() -1;
+        while(forwardPointer < backwardPointer){
+            if(sb.charAt(backwardPointer--) != sb.charAt(forwardPointer++)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isPalindromeRegex(String s) {
         String pattern = "[^a-zA-Z\\d]";
         s = s.toLowerCase();
         s = s.replaceAll(pattern, "");
@@ -17,6 +38,9 @@ class Solution{
 
 public class Main{
     public static void main(String[] args){
+        String input = "A man, a plan, a canal: Panama";
+        // System.out.println(new Solution().isPalindromeRegex(input));
+        System.out.println(new Solution().isPalindromeCharAt(input));
 
     }
 
