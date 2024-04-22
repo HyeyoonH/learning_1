@@ -1,4 +1,26 @@
 class Solution{
+    public boolean usingCharArray(String s, String t){
+        if(s.length() != t.length()){
+            return false;
+        }    
+        char[] charArrayS = s.toCharArray();
+        char[] charArrayT = t.toCharArray();
+
+        Arrays.sort(charArrayS);
+        Arrays.sort(charArrayT);
+        
+        return Arrays.equals(charArrayS, charArrayT);
+        
+        // for(int i=0; i < s.length(); i++){
+        //     if (charArrayS[i] != charArrayT[i]){
+        //         return false;
+        //     }
+        // }
+        //  return true;
+    
+    }
+    
+
     public boolean usingHashMap(String s, String t){
         Map<Character, Integer> map = new HashMap<Character, Integer>();
          
@@ -14,15 +36,20 @@ class Solution{
              if(map.containsKey(t.charAt(j))){
                  map.put(t.charAt(j), map.get(t.charAt(j))-1);
              } else {
-                 map.put(t.charAt(j), 1);
+                 return false;
              }    
          }
          
-         for(Map.Entry<Character, Integer> entry: map.entrySet()){
-             if(entry.getValue() !=0){
-                 return false;
-             }
-         }
+        //  for(Map.Entry<Character, Integer> entry: map.entrySet()){
+        //      if(entry.getValue() !=0){
+        //          return false;
+        //      }
+        //  }
+        for(int count: map.values()){
+            if(count != 0){
+                return false;
+            }
+        }
          return true;
      }
      
