@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution{
     public boolean usingCharArray(String s, String t){
         if(s.length() != t.length()){
@@ -20,7 +22,6 @@ class Solution{
     
     }
     
-
     public boolean usingHashMap(String s, String t){
         Map<Character, Integer> map = new HashMap<Character, Integer>();
          
@@ -86,6 +87,9 @@ class Solution{
 
 public class Main{
     public static void main(String[] args){
+        String s = "anagram";
+        String t = "nagaram";
         
+        System.out.println(new Solution().usingCharArray(s, t));
     }
 }
