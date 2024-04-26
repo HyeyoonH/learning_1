@@ -14,8 +14,6 @@ class Solution{
         int minLen = minLen(strs);
         if(minLen == 0 || strs == null) return "";
         if(strs.length ==1) return strs[0];
-
-        boolean characterMatch = false;
         
         Arrays.sort(strs);
          for(int position=0; position < minLen; position++){
