@@ -1,4 +1,4 @@
-// package srcs.removeNth;
+package srcs.removeNth; // after javac run it by "java srcs.remmoveNth.Main"
 
 class ListNode{
     int val;
