@@ -13,6 +13,10 @@ class Student{
     public String toString(){
         return this.rollNo + " " + this.name + " " + this.address;
     }
+
+    public boolean equals(Student s){
+        return (s.rollNo == this.rollNo) && (s.name.equals(this.name)) && (s.address.equals(this.address));
+    }
 }
 
 class SortByRoll implements Comparator<Student>{
@@ -38,29 +42,33 @@ public class GFG {
         studentList.add(new Student(131, "Anshul", "nyc"));
         studentList.add(new Student(121, "Solanki", "jaipur"));
         studentList.add(new Student(101, "Aggarwal", "Hongkong"));
+        studentList.add(new Student(111, "ADAM", "LONDON"));
 
         // Collections.sort(studentList, new SortByRoll());
         // for(Student student: studentList){
         //     System.out.println(student.toString());
         // }
 
-        // Collections.sort(studentList, new SortByName());
+        Collections.sort(studentList, new SortByName());
         // for(Student student: studentList){
         //     System.out.println(student.toString());
         // }
 
-
-        ArrayList<Integer> arrayList = new ArrayList<Integer>();
-        arrayList.add(10);
-        arrayList.add(7);
-        arrayList.add(1);
-        arrayList.add(3);
-        arrayList.add(11);
-
-        Collections.sort(arrayList);
-        for(int num: arrayList){
-            System.out.println(num);
+        if(studentList.get(0).equals(studentList.get(1))){
+            System.out.println("They are the same.");
         }
+
+        // ArrayList<Integer> arrayList = new ArrayList<Integer>();
+        // arrayList.add(10);
+        // arrayList.add(7);
+        // arrayList.add(1);
+        // arrayList.add(3);
+        // arrayList.add(11);
+
+        // Collections.sort(arrayList);
+        // for(int num: arrayList){
+        //     System.out.println(num);
+        // }
 
         Map<Character, Integer> map = new HashMap<Character, Integer>();
 
